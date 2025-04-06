@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dataentry',
     'uploads',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +154,6 @@ EMAIL_USE_TLS = True
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_TO_EMAIL='debasmitadey1805@gmail.com'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

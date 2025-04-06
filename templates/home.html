@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="container" style="padding: 50px;">
+    {% if user.is_authenticated %}
     <h2 class="text-center">Automate The Boring Stuff With Django</h2>
     <div class="row pt-5">
         <!-- Import data -->
@@ -89,5 +90,18 @@
             </a>
         </div>
     </div>
+    {% else %}
+    
+    <div class="home-info">
+        <h2 class="text-center">Automate The Boring Stuff With Django</h2>
+        <p class="lead text-center text-muted">
+            In this project, I used Celery with Redis to handle background tasks asynchronously, improving performance and user experience. Key features include importing and exporting large CSV files, sending bulk emails with tracking, compressing uploaded images, and performing web scraping without blocking the main application. This setup ensures the application stays responsive while managing resource-intensive operations efficiently.
+        </p>
+        <div style="display: flex; justify-content: center;">
+            <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
+            &nbsp;&nbsp;<a href="{% url 'register' %}" class="btn btn-success">REGISTER</a>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
