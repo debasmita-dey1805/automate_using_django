@@ -25,7 +25,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'uploads',
     'crispy_forms',
     'crispy_bootstrap5',
+    'emails',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +159,13 @@ DEFAULT_TO_EMAIL='debasmitadey1805@gmail.com'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        
+        'height': 200,
+        
+    },
+}
+CSRF_TRUSTED_ORIGINS=['https://f9f7-103-102-116-20.ngrok-free.app']
+BASE_URL='https://f9f7-103-102-116-20.ngrok-free.app'

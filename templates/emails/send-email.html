@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container mt-5 p-3 shadow rounded" style="max-width: 500px;">
+    <h2 class="text-center">Compose & Send Emails</h2>
+    {% include 'alerts.html' %}
+    <form method="POST" action="{% url 'send_email' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ email_form | crispy }}
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+{% endblock %}
