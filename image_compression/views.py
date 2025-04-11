@@ -23,8 +23,7 @@ def compress(request):
             output_format=img.format
             buffer=io.BytesIO()
             
-            img.save(buffer, format=output_format, quality=quality)
-            
+            img.save(buffer, format=output_format, quality=quality)            
             buffer.seek(0)
             
             #  Save compressed image inside model
